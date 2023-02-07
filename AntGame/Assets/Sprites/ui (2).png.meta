@@ -125,6 +125,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -452,7 +464,7 @@ TextureImporter:
         width: 40
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -460,6 +472,48 @@ TextureImporter:
       bones: []
       spriteID: 08a510add1d821045b5a437eb4303de9
       internalID: -1238947305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui (2)_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 205
+        width: 49
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83aa0420a84bfe4697d353203a7ff61
+      internalID: 670052535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui (2)_17
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 205
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f33df49987fcf47b34ff9d8eeb7a2c
+      internalID: 1171063994
       vertices: []
       indices: 
       edges: []
@@ -480,10 +534,12 @@ TextureImporter:
       ui (2)_3: 1000761670
       ui (2)_14: 439431538
       ui (2)_12: 31262694
+      ui (2)_17: 1171063994
       ui (2)_6: -952977949
       ui (2)_0: 1179521738
       ui (2)_8: -1050472718
       ui (2)_15: -1238947305
+      ui (2)_16: 670052535
       ui (2)_2: -1459539605
       ui (2)_5: 1205894209
       ui (2)_4: -247743652
