@@ -168,7 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjPrefab: {fileID: 7574224092669715038, guid: 7165664328cffde438409b6719da1c36, type: 3}
-  count: 6
+  BulletPrefab: {fileID: 712436061574402165, guid: 56d0a8ae2e00abc448ce64c92175b99d, type: 3}
+  count: 50
+  bulletCount: 1000
 --- !u!1 &522257672
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6a0827a467bdc408d0c93b7250d4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  antCount: 6
+  antCount: 50
+  Ants: []
+  Start_bulletShoot: 0
 --- !u!4 &522257674
 Transform:
   m_ObjectHideFlags: 0

@@ -6,8 +6,11 @@ using TMPro;
 
 public class GameManager : SingletonBase<GameManager>
 {
-    public int antCount = 6;
-    
+    public int antCount = 50;
+
+    public List<GameObject> Ants = default;
+
+    public bool Start_bulletShoot = false;
 
     public new void Awake()
     {
@@ -17,14 +20,14 @@ public class GameManager : SingletonBase<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        
-
+        // 리스트 초기화
+         Ants = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -38,6 +41,7 @@ public class GameManager : SingletonBase<GameManager>
     public void gameStart()
     {
         StartCoroutine(antNumberMove());
+        Start_bulletShoot = true;
     }
 
     IEnumerator antNumberMove()
@@ -48,13 +52,16 @@ public class GameManager : SingletonBase<GameManager>
             GameObject tempobj = ObjectPoollingManager.Instance.PoolPop();
             tempobj.transform.localPosition = new Vector3(-560f, 420f, 0f);
             tempobj.SetActive(true);
+            Ants.Add(tempobj);
 
-            // 0.5초 딜레이를 주고
-            yield return new WaitForSeconds(3f);
+            // 3초 딜레이를 주고
+            yield return new WaitForSeconds(1f);
         }
 
     }
 
+
+  
 
 
 

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AntMove : MonoBehaviour
 {
-    public float AntSpeed = 50f;
- 
+    public float AntSpeed = 200f;
+
+
+    public bool isDie = false;
 
     #region Player's component
     private Rigidbody2D AntRigid = default;
@@ -22,14 +24,21 @@ public class AntMove : MonoBehaviour
         AntRigid = gameObject.GetComponent<Rigidbody2D>();
         AntAni = transform.GetComponent<Animator>();
 
-        StartCoroutine(targetPosRandomCh());
+        
 
     }
-
+    public void OnEnable()
+    {
+        StartCoroutine(targetPosRandomCh());
+        isDie = false;
+    }
     // Update is called once per frame
     void Update()
     {
-        antMove();
+        if (isDie == false)
+        {
+            antMove();
+        }
     }
 
     public void antMove()
@@ -83,9 +92,33 @@ public class AntMove : MonoBehaviour
         }
     }
 
-    // 벽과 충돌하면
-    //public void Walls()
-    //{
+    // 개미가 총알에 맞으면 죽는다.
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log($"OnTriggerEnter2D {collision}");
 
-    //}
+        if (collision.tag == "Bullet")
+        {
+            AntDie();
+            ObjectPoollingManager.Instance.bulletPoolPush(collision.gameObject);
+        }
+    }
+
+    public void AntDie()
+    {
+        AntAni.SetTrigger("Die");
+
+        StartCoroutine(DieDelay());
+        // 개미가 움직이지 않게 한다.
+        isDie = true;
+       
+
+    }
+    
+    IEnumerator DieDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        // 개미 죽으면 사라진다.
+        ObjectPoollingManager.Instance.PoolPush(gameObject);
+    }
 }

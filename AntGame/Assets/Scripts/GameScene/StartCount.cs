@@ -42,14 +42,6 @@ public class StartCount : MonoBehaviour
 
     }
 
-    //// 카운터가 된 후 
-    //public void CountAfter()
-    //{
-    //    // 게임이 시작된다.(개미가 나타난다.)
-    //    GameObject tempobj = ObjectPoollingManager.Instance.PoolPop();
-    //    tempobj.transform.localPosition = new Vector3(-560f, 420f, 0f);
-    //    tempobj.SetActive(true);
-    //}
 
 
 }
