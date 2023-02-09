@@ -36,7 +36,7 @@ public class ObjectPoollingManager : SingletonBase<ObjectPoollingManager>
     {
         for(int i=0; i < count; i++)
         {
-            GameObject tempObj = Instantiate(ObjPrefab,GFunc.GetRootObj("GameObject").transform);
+            GameObject tempObj = Instantiate(ObjPrefab,GFunc.GetRootObj("GameObject").FindChildObj("Enemys").transform);
             tempObj.SetActive(false);
             Pool.Push(tempObj);
         }
@@ -61,7 +61,7 @@ public class ObjectPoollingManager : SingletonBase<ObjectPoollingManager>
     {
         for (int i = 0; i < bulletCount; i++)
         {
-            GameObject bulletTmpObj = Instantiate(BulletPrefab, GFunc.GetRootObj("GameObject").transform);
+            GameObject bulletTmpObj = Instantiate(BulletPrefab, GFunc.GetRootObj("GameObject").FindChildObj("Enemys").transform);
             bulletPool.Push(bulletTmpObj);
         }
         

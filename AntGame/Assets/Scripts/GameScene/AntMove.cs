@@ -53,6 +53,7 @@ public class AntMove : MonoBehaviour
         transform.localPosition = pos;
         transform.LookAt2D(targetPos, 10f);
 
+                    GameObject AntCake = transform.GetChild(0).gameObject;
         if (BackPos == false)
         {
             if (transform.localPosition == cakePos)
@@ -62,11 +63,9 @@ public class AntMove : MonoBehaviour
                 if (cake.activeSelf == true)
                 {
                     // 개미의 케이크가 활성화한다.
-                    GameObject AntCake = transform.GetChild(0).gameObject;
                     AntCake.SetActive(true);
                     cake.SetActive(false);
                 }
-
 
                 // 케이크에 도착했을때
                 BackPos = true;
@@ -74,10 +73,12 @@ public class AntMove : MonoBehaviour
         }
         else
         {
-            if (transform.localPosition == antHollPos)
+            if (transform.localPosition == antHollPos && AntCake.activeSelf == true)
             {
                 // 개미, 케이크가 없어진다.
                 ObjectPoollingManager.Instance.PoolPush(gameObject);
+                GameObject Gameover = GFunc.GetRootObj("GameObject").FindChildObj("GameOverBackground");
+                Gameover.SetActive(true);    
             }
         }
 

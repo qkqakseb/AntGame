@@ -20,26 +20,31 @@ public class GameManager : SingletonBase<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        // 리스트 초기화
-         Ants = new List<GameObject>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name== "initScene")
+        if (scene.name == "initScene")
         {
             SceneManager.LoadScene("TittleScene");
         }
-        
+        if (scene.name == "GameScene")
+        {
+            Ants = new List<GameObject>();
+
+        }
+
     }
 
     public void gameStart()
     {
+        // 리스트 초기화
         StartCoroutine(antNumberMove());
         Start_bulletShoot = true;
     }
@@ -61,11 +66,11 @@ public class GameManager : SingletonBase<GameManager>
     }
 
 
-  
 
 
 
 
 
-    
+
+
 }

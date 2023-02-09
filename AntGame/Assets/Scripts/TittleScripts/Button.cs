@@ -28,7 +28,7 @@ public class Button : MonoBehaviour
 #endif
     }
 
-    // PlayStart 버튼을 클릭하면 PlayStartScene 이름의 씬으로 넘어간다.
+    // PlayStart 버튼, Restart 버튼을 클릭하면 PlayStartScene 이름의 씬으로 넘어간다.
     public void GameSceneButton()
     {
         SceneManager.LoadScene("GameScene");
@@ -36,5 +36,6 @@ public class Button : MonoBehaviour
 
 
 
-    
+
+
 }
