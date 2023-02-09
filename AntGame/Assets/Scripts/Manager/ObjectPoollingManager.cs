@@ -37,6 +37,7 @@ public class ObjectPoollingManager : SingletonBase<ObjectPoollingManager>
         for(int i=0; i < count; i++)
         {
             GameObject tempObj = Instantiate(ObjPrefab,GFunc.GetRootObj("GameObject").transform);
+            tempObj.SetActive(false);
             Pool.Push(tempObj);
         }
     }
